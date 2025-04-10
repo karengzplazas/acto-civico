@@ -22,6 +22,20 @@
       cursor: pointer;
       border-radius: 10px;
     }
+    .btn-music {
+      background-color: #ffb3c6;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 25px;
+      margin-top: 20px;
+      transition: all 0.3s;
+    }
+    .btn-music:hover {
+      background-color: #ff80ab;
+    }
     .mensaje {
       margin-top: 30px;
       font-size: 20px;
@@ -68,11 +82,14 @@
     <p style="margin-top:20px;"><em>Firmado con amor,</em><br>Karen 💋</p>
   </div>
 
- <!-- 🎵 MÚSICA PERSONALIZADA - Mi Corazón Encantado -->
-<audio autoplay loop>
-  <source src="corazon-encantado.mp3" type="audio/mp3">
-  Tu navegador no soporta audio.
-</audio>
+  <!-- 🎵 MÚSICA PERSONALIZADA - Mi Corazón Encantado -->
+  <audio id="musica" loop>
+    <source src="corazon-encantado.mp3" type="audio/mp3">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <!-- 🔘 BOTÓN DE MÚSICA -->
+  <button id="botonMusica" class="btn-music" onclick="alternarMusica()">🎵 Reproducir música</button>
 
   <!-- 🎉 CONFETI JS -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
@@ -98,6 +115,19 @@ para cuidar de nuestra relación. 💗🥖`;
 
       // ✨ Mostrar certificado
       document.getElementById("certificado").style.display = "block";
+    }
+
+    function alternarMusica() {
+      const audio = document.getElementById("musica");
+      const boton = document.getElementById("botonMusica");
+
+      if (audio.paused) {
+        audio.play();
+        boton.innerText = "🔇 Pausar música";
+      } else {
+        audio.pause();
+        boton.innerText = "🎵 Reproducir música";
+      }
     }
   </script>
 
