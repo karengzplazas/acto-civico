@@ -39,14 +39,11 @@
       margin-bottom: 30px;
       white-space: pre-wrap;
     }
-    .dragonball {
-      background: url('https://upload.wikimedia.org/wikipedia/en/0/05/Four_Star_Dragon_Ball.png') no-repeat center;
-      background-size: contain;
-      width: 200px;
-      height: 200px;
-      margin: 20px auto;
-      animation: brillar 2s infinite alternate;
+    .esfera-visible {
       display: none;
+      margin: 20px auto;
+      width: 180px;
+      animation: brillar 2s infinite alternate;
     }
     @keyframes brillar {
       from { filter: brightness(1); }
@@ -88,13 +85,13 @@
   <!-- 📍 Botón "LO PROMETO" -->
   <button id="botonPromesa" class="btn" style="display:none;" onclick="mostrarJuramento()">LO PROMETO</button>
 
-  <!-- 🐉 Esfera de Dragon Ball -->
-  <div id="dragonBall" class="dragonball"></div>
+  <!-- 🐉 Esfera visible -->
+  <img src="https://upload.wikimedia.org/wikipedia/en/0/05/Four_Star_Dragon_Ball.png" id="dragonBall" class="esfera-visible" alt="Esfera de Dragon Ball">
 
   <!-- ✨ Juramento -->
   <div class="mensaje" id="juramento"></div>
 
-  <!-- 💌 Certificado -->
+  <!-- 💘 Certificado -->
   <div class="certificado" id="certificado" style="display:none;">
     <h2>💘 Certificado del Amor Verdadero 💘</h2>
     <p>Se otorga el presente reconocimiento a:</p>
@@ -182,4 +179,3 @@ para cuidar de nuestra relación.`;
 
 </body>
 </html>
-
