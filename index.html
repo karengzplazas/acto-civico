@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Juramento de amor</title>
+  <title>Juramento de Amor</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -59,6 +59,18 @@
       from { opacity: 0; transform: scale(0.5); }
       to { opacity: 1; transform: scale(1); }
     }
+    .frase-shenlong {
+      display: none;
+      margin-top: 20px;
+      font-size: 20px;
+      color: #008080;
+      font-weight: bold;
+      animation: flotar 3s ease-in-out infinite alternate;
+    }
+    @keyframes flotar {
+      0% { transform: translateY(0); opacity: 0.7; }
+      100% { transform: translateY(-10px); opacity: 1; }
+    }
     .certificado {
       margin-top: 40px;
       padding: 20px;
@@ -80,7 +92,7 @@
 </head>
 <body>
 
-  <h1>🎖️ Acto Cívico del Amor 🎖️</h1>
+  <h1>🎖️ Juramento de Amor 🎖️</h1>
 
   <!-- 🎵 Música -->
   <audio id="musica" loop>
@@ -93,7 +105,7 @@
   <div class="mensaje" id="mensajeInicial"></div>
   <button id="botonPromesa" class="btn" style="display:none;" onclick="mostrarJuramento()">LO PROMETO</button>
 
-  <!-- 🟠 Esfera local -->
+  <!-- 🟠 Esfera -->
   <img src="assets/esfera.jpeg" id="dragonBall" class="esfera-visible" alt="Esfera de Dragon Ball">
 
   <!-- ✨ Juramento -->
@@ -112,8 +124,11 @@
     <button class="btn" onclick="descargarCertificado()">Descargar Certificado</button>
   </div>
 
-  <!-- 🐉 Shenlong local -->
+  <!-- 🐉 Shenlong -->
   <img src="assets/shenlong.jpeg" alt="Shenlong" id="shenlong" class="shenlong">
+
+  <!-- ✨ Frase mágica -->
+  <div id="fraseShenlong" class="frase-shenlong">🐉 “Tus deseos han sido escuchados… el amor verdadero ha sido concedido.”</div>
 
   <!-- 🎉 Librerías -->
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
@@ -157,6 +172,7 @@ para cuidar de nuestra relación.`;
       document.body.style.backgroundColor = "#d0ebff";
       document.getElementById("certificado").style.display = "block";
       document.getElementById("shenlong").style.display = "block";
+      document.getElementById("fraseShenlong").style.display = "block";
 
       confetti({
         particleCount: 150,
@@ -191,4 +207,3 @@ para cuidar de nuestra relación.`;
 
 </body>
 </html>
-
