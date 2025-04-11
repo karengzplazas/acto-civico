@@ -105,4 +105,81 @@
     Te amo.</p>
     <p style="margin-top:20px;"><em>Firmado con amor,</em><br>Karen 🥐💙</p>
     <button class="btn" onclick="descargarCertificado()">Descargar Certificado</button>
-  </
+  </div>
+
+  <!-- 🎉 Librerías -->
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+  <script>
+    window.onload = function iniciarMensaje() {
+      const mensajeReflexivo = `
+Aunque la terquedad nos desborda en ocasiones, no importa pues yo quiero estar a tu lado.
+
+Si voy a discutir con alguien, serás tú.  
+Si te vas a molestar con alguien, seré yo.  
+Y si nos vamos a reconciliar, seremos nosotros:  
+
+Así juntitos, por un rato donde más nada importa,  
+no existen lo malo ni lo bueno.  
+Solo estamos los dos,  
+hablando de cosas que solo nosotros entendemos,  
+imaginando cosas hilarantes y extrañas  
+entre una gatita calva y su dueño comprándole una peluca (color rosado).  
+
+Prometamos que siempre lo vamos a intentar aunque todo se complique.  
+TE AMO.`;
+
+      document.getElementById("mensajeInicial").innerText = mensajeReflexivo;
+      document.getElementById("botonPromesa").style.display = "inline-block";
+    }
+
+    function mostrarJuramento() {
+      const juramento = `
+Yo, Karen, prometo dar siempre lo mejor de mí para que seas feliz a mi lado. 
+Hacerte hormiguita y pirañita bien despacito y darte mi cariño incluso en los días malos.
+
+Y tú, Ronal, promete que siempre vas a ser mi postecito, 
+lo más bonito de mi corazón y que vamos a hacer todo lo posible 
+para cuidar de nuestra relación.`;
+
+      document.getElementById("mensajeInicial").innerText = juramento;
+      document.getElementById("botonPromesa").style.display = "none";
+      document.getElementById("dragonBall").style.display = "block";
+      document.body.style.backgroundColor = "#d0ebff";
+      document.getElementById("certificado").style.display = "block";
+
+      confetti({
+        particleCount: 150,
+        spread: 100,
+        origin: { y: 0.6 }
+      });
+    }
+
+    function alternarMusica() {
+      const audio = document.getElementById("musica");
+      const boton = document.getElementById("botonMusica");
+
+      if (audio.paused) {
+        audio.play();
+        boton.innerText = "🔇 Pausar música";
+      } else {
+        audio.pause();
+        boton.innerText = "🎵 Reproducir música";
+      }
+    }
+
+    function descargarCertificado() {
+      const cert = document.getElementById("certificado");
+      html2canvas(cert).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'certificado_amor_ronal.png';
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+      });
+    }
+  </script>
+
+</body>
+</html>
+
